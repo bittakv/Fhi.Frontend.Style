@@ -11,9 +11,11 @@
 .form-control:focus {
     border-radius: $fhi-input-height-xs / 2;
     border-color: $fhi-grey-3;
+    border-width: 2px;
 }
 select.form-control:focus {
     border-radius: $input-border-radius;
+    border-width: 2px;
 }
 textarea.form-control {
     height: auto;

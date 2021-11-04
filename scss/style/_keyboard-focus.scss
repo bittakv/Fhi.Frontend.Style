@@ -1,19 +1,36 @@
-[data-whatintent="mouse"],
-[data-whatintent="touch"] {
-    *:focus {
-        outline: none !important;
-    }
-    *:not(.btn, .form-check-input):focus {
-        box-shadow: none !important;
-    }
+// [data-whatintent="mouse"],
+// [data-whatintent="touch"] {
+//     *:focus {
+//         outline: none !important;
+//     }
+//     *:not(.btn, .form-check-input):focus {
+//         box-shadow: none !important;
+//     }
+// }
+// [data-whatintent="keyboard"] {
+//     *:focus {
+//         outline: solid 5px $fhi-red-1 !important;
+//         border-color: transparent !important;
+//     }
+//     th[tabindex="0"]:focus {
+//         outline: none !important;
+//         box-shadow: 0 0 0 4px $fhi-red-1 inset;
+//     }
+// }
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
-[data-whatintent="keyboard"] {
-    *:focus {
-        outline: solid 5px $fhi-red-1 !important;
-        border-color: transparent !important;
-    }
-    th[tabindex="0"]:focus {
-        outline: none !important;
-        box-shadow: 0 0 0 4px $fhi-red-1 inset;
-    }
+
+*:not(.form-control, .form-select):focus-visible,
+[data-whatintent="keyboard"] .form-control:focus-visible,
+[data-whatintent="keyboard"] .form-select:focus-visible {
+    outline: solid 5px $fhi-red-1 !important;
+    border-color: transparent !important;
+}
+
+th[tabindex="0"]:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 4px $fhi-red-1 inset;
 }
