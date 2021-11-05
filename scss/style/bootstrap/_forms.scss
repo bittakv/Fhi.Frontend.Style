@@ -8,14 +8,14 @@
     height: $fhi-input-height-xs;
     min-height: $fhi-input-height-xs;
 }
-.form-control:focus {
+.form-control:focus-visible {
     border-radius: $fhi-input-height-xs / 2;
-    border-color: $fhi-grey-3;
-    border-width: 2px;
+    border-color: $fhi-red-1;
+    outline: solid 2px $fhi-red-1 !important;
 }
-select.form-control:focus {
-    border-radius: $input-border-radius;
-    border-width: 2px;
+.form-select:focus-visible {
+    border-color: $fhi-red-1;
+    outline: solid 2px $fhi-red-1 !important;
 }
 textarea.form-control {
     height: auto;
@@ -24,6 +24,10 @@ textarea.form-control {
 .form-control.is-invalid {
     background-image: unset;
     color: $form-feedback-invalid-color;
+
+    &:focus-visible {
+        outline-color: $fhi-pink-dark-3;
+    }
 }
 .invalid-feedback {
     font-family: $fhi-font-family-sans-serif-medium;
