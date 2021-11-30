@@ -89,7 +89,7 @@ const closeTheMap = function() {
   });
 
   // close up the file names list (for reference)
-  fs.appendFile(iconsNameList, ')\n```\n', 'utf-8', error => {
+  fs.appendFile(iconsNameList, ');\n```\n', 'utf-8', error => {
     checkForErrors(error);
   });
 
