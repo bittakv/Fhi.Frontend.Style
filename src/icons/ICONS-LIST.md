@@ -23,6 +23,7 @@ $included-icons: (
   'insight',
   'muscle',
   'no-handwash',
+  'pencil',
   'population',
   'question-circle-regular',
   'suicide',
