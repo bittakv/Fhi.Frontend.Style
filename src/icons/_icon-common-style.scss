@@ -6,8 +6,6 @@
     height: $fhi-space-4;
     width: $fhi-space-4;
 }
-
-// generate classes with prefix .icon- using the $icons map, eg. .icon-chevron-expand
 .icon {
-    @include icon-classes-generator(); // (mixin)
+    @include all-icon-classes();
 }

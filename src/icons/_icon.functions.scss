@@ -13,21 +13,21 @@
  * License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 **/
 
-@function get-icon($iconName, $color: currentColor) {
-    $icon: map-get($icons, $iconName);
-
-    @if ($icon != '') {
-        $placeholder: '%%COLOR%%';
-        $data-uri: str-replace($icon, $placeholder, $color);
-
-        @each $char, $encoded in $svg-encoding-reference {
-            $data-uri: str-replace($data-uri, $char, $encoded);
-        }
-
-        @return url($data-svg-prefix + $data-uri);
+// Global variables
+//  - $svg-encoding-reference
+//  - $icons-color
+@function update-icon-svg($icon-svg) {
+    $icon-svg-updated: str-replace($icon-svg, '%%COLOR%%', $icons-color);
+    @each $char, $encoded in $svg-encoding-reference {
+        $icon-svg-updated: str-replace($icon-svg-updated, $char, $encoded);
     }
+    @return $icon-svg-updated;
+}
 
-    // if the icon is defined with a name, but the string is empty
-    @warn 'There seems to be a missing icon in the list: ' + $iconName;
-    @return null;
+@function icon-svg-not-empty-string($icon-svg, $icon-name) {
+    @if ($icon-svg == '') {
+        @warn 'There seems to be a missing icon in the list: ' + $icon-name;
+        @return false;
+    }
+    @return true;
 }

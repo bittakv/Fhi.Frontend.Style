@@ -1,17 +1,26 @@
-@mixin icon-classes-generator {
-    @each $iconName, $iconSVG in $icons {
-        @if variable-exists(included-icons) {
-            @each $iconNameToUse in $included-icons {
-                @if $iconName == $iconNameToUse {
-                    &-#{$iconName} {
-                        background-image: get-icon($iconName, $icons-color);
-                    }
-                }
-            }
-        } @else {
-            &-#{$iconName} {
-                background-image: get-icon($iconName, $icons-color);
-            }
+// Global variables
+//  - $icons
+//  - $data-svg-prefix
+//  - $included-icons (optional)
+
+// Generate classes with prefix .icon- using the $icons map, eg. .icon-chevron-expand
+@mixin all-icon-classes {
+    @if variable-exists(included-icons) {
+        @each $icon-name in $included-icons {
+            @include background-image($icon-name, map-get($icons, $icon-name));
+        }
+    } @else {
+        @each $icon-name, $icon-svg in $icons {
+            @include background-image($icon-name, $icon-svg);
         }
     }
 }
+
+@mixin background-image($icon-name, $icon-svg) {
+    @if icon-svg-not-empty-string($icon-svg, $icon-name) {
+        &-#{$icon-name} {
+            background-image: url($data-svg-prefix + update-icon-svg($icon-svg));
+        }
+    }
+}
+
