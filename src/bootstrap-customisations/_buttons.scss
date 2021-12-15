@@ -1,9 +1,19 @@
 .btn {
     font-size: $btn-font-size;
     line-height: 1;
+    font-family: $btn-font-family;
     height: $fhi-btn-height;
     padding: $fhi-btn-padding-y $fhi-btn-padding-x;
+    text-decoration: unset;
     transition: all 0.1s linear;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
 }
 .btn-sm {
     width: $fhi-btn-sm-width;

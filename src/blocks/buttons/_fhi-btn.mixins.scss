@@ -1,15 +1,11 @@
 @mixin fhi-btn($background-color, $border-color, $color) {
     background-color: $background-color;
     border-color: $border-color;
-    box-shadow: none;
     color: $color;
-    font-family: $btn-font-family;
-    text-decoration: unset;
 }
 
 @mixin fhi-btn-hover($background-color, $border-color, $color) {
     @include fhi-btn($background-color, $border-color, $color);
-    text-decoration: underline;
 }
 
 @mixin fhi-btn-focus($background-color, $border-color, $color) {

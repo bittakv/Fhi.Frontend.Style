@@ -1,0 +1,25 @@
+$btn-icon-size: calc(#{$fhi-space-4} - 4px);
+
+.btn-with-icon {
+  border-color: $fhi-grey-1;
+  border-radius: $fhi-btn-border-radius-lg;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: $fhi-space-3;
+  padding-right: $fhi-space-3;
+
+  [class^="icon-"] {
+    background-size: contain;
+
+    margin-right: $fhi-space-2;
+
+    height: $btn-icon-size;
+    width: $btn-icon-size;
+  }
+
+  &:hover:not(:active) {
+    background-color: $fhi-pink-light-2;
+  }
+}
